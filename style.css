@@ -1,5 +1,5 @@
-/* 
- * Some Default Styles are provided for your convenience. 
+/*
+ * Some Default Styles are provided for your convenience.
  * You can start adding your own CSS below line 60.
  */
 
@@ -20,6 +20,47 @@ p {
 h1 {
   font-size: 3em;
 }
+
+#about {
+  display: flex;
+  flex-direction: column;
+}
+#about > div {
+display: flex;
+
+}
+#about p {
+  flex: 3;
+  }
+
+#about #aboutmockup {
+  flex: 2;
+  align-self: flex-end;
+  }
+
+#staff {
+  display: flex;
+  flex-direction: column;
+}
+#staff>div{
+  display: flex;
+  flex-wrap: wrap;
+}
+#staff .staff-profile {
+  flex: 0 0 33%;
+  text-align: center;
+  padding: 10px;
+}
+
+#staff .staff-name{
+  align-self: center;
+  background-color: yellow;
+  text-align: center;
+}
+/* #staff .staff-bio {
+  /* flex-direction: row; */
+  /* flex-wrap: wrap;
+} */
 
 h2 {
   font-size: 2em;
@@ -60,9 +101,75 @@ section h2:after {
 
 /* Header defaults */
 header {
+  display: flex;
   background-color: rgba(37, 37, 37, 0.8);
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
 }
 
-/* 
+.logo > img{
+height: 4rem;
+}
+header>nav{
+  display: flex;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  /* justify-content: space-between; */
+  }
+  #carousel-text{
+    z-index: 2;
+    position: absolute;
+    top: 25vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px black;
+  }
+  #carousel{
+    width: 100vw;
+    height: 100vh;
+  }
+  #carousel img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    z-index:-4
+  }
+  #carousel>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    z-index:-3
+  }
+/*
  * YOUR CSS:
  */
+
+@supports (display:flex){
+
+  @media (max-width: 500px) {
+    /* more CSS for that specific screen size*/
+    h1{
+      font-size: 2rem;
+    }
+    h2{
+      font-size: 1rem;
+    }
+    #carousel {
+      width: 100vw;
+      height: 50vh;
+  }
+  section h2 {
+    text-align: center;
+    /* position: relative; */
+}
+   }
+}
